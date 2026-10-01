@@ -2,12 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Check Environment') {
+        stage('Test Windows Command') {
             steps {
-                bat 'where node'
-                bat 'where npm'
-                bat 'node --version'
-                bat 'npm --version'
+                bat 'echo Hello from Jenkins'
             }
         }
     }
