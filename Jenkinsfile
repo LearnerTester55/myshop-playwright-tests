@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test Windows Command') {
             steps {
-                bat 'echo Hello from Jenkins'
+                powershell 'Write-Host "Hello from Jenkins PowerShell"'
             }
         }
     }
