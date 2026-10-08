@@ -4,10 +4,11 @@ pipeline {
     stages {
 
         stage('Install Dependencies') {
-            steps {
-                powershell 'npm ci'
-            }
-        }
+    steps {
+        powershell 'node --version'
+        powershell 'npm --version'
+    }
+}
 
         stage('Run Playwright Tests') {
             steps {
