@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Test Windows Command') {
+
+        stage('Install Dependencies') {
             steps {
-                powershell 'Write-Host "Hello from Jenkins PowerShell"'
+                powershell 'npm ci'
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                powershell 'npx playwright test'
             }
         }
     }
